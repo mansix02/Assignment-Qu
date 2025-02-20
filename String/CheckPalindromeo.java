@@ -3,22 +3,18 @@ package String;
 public class CheckPalindromeo {
 
     public static boolean isPalindrome(String input) {
-        input = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        int left = 0;
-        int right = input.length() - 1;
-
-        while (left < right) {
-            if (input.charAt(left) != input.charAt(right)) {
+        for(int i=0; i<input.length()/2; i++){
+            int n = input.length();
+            
+            if(input.charAt(i)!= input.charAt(n-1-i)){
                 return false;
             }
-            left++;
-            right--;
         }
         return true;
     }
 
     public static void main(String[] args) {
-        String input = "madam";
+        String input = "mansi";
         if (isPalindrome(input)) {
             System.out.println(input + " is a palindrome.");
         } else {
